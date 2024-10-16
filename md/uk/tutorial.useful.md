@@ -42,7 +42,7 @@ Mozilla/5.0 (Linux) Firefox/112.0
 ```php
 <?php
 if (str_contains($_SERVER['HTTP_USER_AGENT'], 'Firefox')) {
-    echo 'Вы используете Firefox.';
+    echo 'Ви використовуєте Firefox.';
 }
 ?>
 ```
@@ -50,7 +50,7 @@ if (str_contains($_SERVER['HTTP_USER_AGENT'], 'Firefox')) {
 Приклад виведення цієї програми:
 
 ```
-Вы используете Firefox.
+Ви використовуєте Firefox.
 ```
 
 Тут ми показали кілька нових елементів. По-перше, тут є конструкція [if](control-structures.if.md). Якщо ви знайомі з основами синтаксису мови C, ви вже помітили щось схоже. Якщо ж ви не знаєте C або подібної за синтаксисом мови, то найкращий варіант - взяти якусь вступну книжку по PHP і прочитати перші пару розділів. Інший варіант - почитати розділ [Опис мови](langref.md)данного руководства.
@@ -65,13 +65,13 @@ if (str_contains($_SERVER['HTTP_USER_AGENT'], 'Firefox')) {
 <?php
 if (str_contains($_SERVER['HTTP_USER_AGENT'], 'Firefox')) {
 ?>
-<h3>str_contains() возвращает true</h3>
-<p>Вы используете Firefox</p>
+<h3>str_contains() повертає true</h3>
+<p>Ви використовуєте Firefox</p>
 <?php
 } else {
 ?>
-<h3>str_contains() возвращает false</h3>
-<p>Вы не используете Firefox</p>
+<h3>str_contains() повертає false</h3>
+<p>Ви не використовуєте Firefox</p>
 <?php
 }
 ?>
@@ -80,8 +80,8 @@ if (str_contains($_SERVER['HTTP_USER_AGENT'], 'Firefox')) {
 Приклад виведення цієї програми:
 
 ```
-<h3>str_contains() возвращает true</h3>
-<p>Вы используете Firefox</p>
+<h3>str_contains() повертає true</h3>
+<p>Ви використовуєте Firefox</p>
 ```
 
 Замість використання команди PHP echo для виведення ми вийшли з режиму коду і просто послали вміст HTML. Важливий момент тут те, що логічна структура PHP коду при цьому не втрачається. Тільки одна HTML-частина буде надіслана клієнту залежно від результату функції [str\_contains()](function.str-contains.md) (іншими словами, залежно від того, знайдено був рядок `Firefox` чи ні).
