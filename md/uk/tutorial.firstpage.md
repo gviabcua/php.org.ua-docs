@@ -17,10 +17,10 @@ origin_hash: ddf652f5224dc9f1fa9671347921941ca401ea50
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Тестируем PHP</title>
+        <title>Тестуємо PHP</title>
     </head>
     <body>
-        <?php echo '<p>Привет, мир!</p>'; ?>
+        <?php echo '<p>Привіт, світ!</p>'; ?>
     </body>
 </html>
 ```
@@ -31,10 +31,10 @@ origin_hash: ddf652f5224dc9f1fa9671347921941ca401ea50
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Тестируем PHP</title>
+        <title>Тестуємо PHP</title>
     </head>
     <body>
-        <p>Привет, мир!</p>
+        <p>Привіт, світ!</p>
     </body>
 </html>
 ```
