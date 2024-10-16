@@ -16,10 +16,12 @@ origin_hash: ddf652f5224dc9f1fa9671347921941ca401ea50
 Ваше имя:
 
 ```
-<label for="age">Ваш возраст:</label>
+<label for="age">Ваш вік:</label>
 <input name="age" id="age" type="number">
+<label for="age">Ваше ім'я:</label>
+<input name="name" id="name" type="text">
 
-<button type="submit">Submit</button>
+<button type="submit">Відправити</button>
 ```
 
 У цій формі немає нічого особливого. Це звичайна форма HTML без спеціальних тегів. Коли користувач заповнить форму та натисне кнопку відправки, буде викликана сторінка action.php. У цьому файлі може бути щось на кшталт:
@@ -27,16 +29,16 @@ origin_hash: ddf652f5224dc9f1fa9671347921941ca401ea50
 **Приклад #2 Виводимо дані форми**
 
 ```php
-Здравствуйте, <?php echo htmlspecialchars($_POST['name']); ?>.
-Вам <?php echo (int)$_POST['age']; ?> лет.
+Вітаємо, <?php echo htmlspecialchars($_POST['name']); ?>.
+Вам <?php echo (int)$_POST['age']; ?> років.
 ```
 
 Приклад виведення цієї програми:
 
 ```
-Здравствуйте, Сергей. Вам 30 лет.
+Вітаємо, Сергій. Вам 30 років.
 ```
 
-Если не принимать во внимание куски кода с[htmlspecialchars()](function.mdspecialchars.md)и`(int)`, принцип роботи цього коду має бути простим і зрозумілим . [htmlspecialchars()](function.mdspecialchars.md) забезпечує правильне кодування "особливих" HTML-символів так, щоб шкідливий HTML або Javascript не було вставлено на вашу сторінку. Поле age, про яке нам відомо, що воно має бути число, ми можемо просто [перетворити](language.types.type-juggling.md#language.types.typecasting) в int, що автоматично позбавить нас небажаних символів. PHP також може зробити це автоматично за допомогою модуля [filter](ref.filter.md). Змінні [$\_POST\['name'\]](reserved.variables.post.md) і [$\_POST\['age'\]](reserved.variables.post.md) автоматично встановлені для вас засобами PHP. Раніше ми використовували суперглобальну змінну [$\_SERVER](reserved.variables.server.md), тут же ми так само використовуємо суперглобальну змінну [$\_POST](reserved.variables.post.md), яка містить усі POST-дані. Зауважимо, що *метод відправки* (method) нашої форми – POST. Якби ми використовували метод *GET*, то інформація нашої форми була б у суперглобальній змінній [$\_GET](reserved.variables.get.md). Крім цього, можна використовувати змінну [$\_REQUEST](reserved.variables.request.md)якщо джерело даних не має значення. Ця змінна містить суміш GET, POST, COOKIE.
+ Якщо не брати до уваги шматки коду з [htmlspecialchars()](function.mdspecialchars.md)и`(int)`, принцип роботи цього коду має бути простим і зрозумілим . [htmlspecialchars()](function.mdspecialchars.md) забезпечує правильне кодування "особливих" HTML-символів так, щоб шкідливий HTML або Javascript не було вставлено на вашу сторінку. Поле age, про яке нам відомо, що воно має бути число, ми можемо просто [перетворити](language.types.type-juggling.md#language.types.typecasting) в int, що автоматично позбавить нас небажаних символів. PHP також може зробити це автоматично за допомогою модуля [filter](ref.filter.md). Змінні [$\_POST\['name'\]](reserved.variables.post.md) і [$\_POST\['age'\]](reserved.variables.post.md) автоматично встановлені для вас засобами PHP. Раніше ми використовували суперглобальну змінну [$\_SERVER](reserved.variables.server.md), тут же ми так само використовуємо суперглобальну змінну [$\_POST](reserved.variables.post.md), яка містить усі POST-дані. Зауважимо, що *метод відправки* (method) нашої форми – POST. Якби ми використовували метод *GET*, то інформація нашої форми була б у суперглобальній змінній [$\_GET](reserved.variables.get.md). Крім цього, можна використовувати змінну [$\_REQUEST](reserved.variables.request.md)якщо джерело даних не має значення. Ця змінна містить суміш GET, POST, COOKIE.
 
 У PHP можна також працювати і з XForms, хоча ви знайдете роботу із звичайними HTML-формами досить комфортною вже через деякий час. Незважаючи на те, що робота з XForms не для новачків, вони можуть здатися вам цікавими. У розділі можливостей PHP у нас також є [коротке введення в обробку даних з XForms](features.xforms.md)
